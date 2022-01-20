@@ -2,7 +2,7 @@ import { useState } from "react";
 import Add from "./components/Add";
 import List from "./components/List";
 
-interface AppState {
+export interface AppState {
   people: { name: string; age: number; url: string; note?: string }[];
 }
 
@@ -15,12 +15,13 @@ const App = () => {
       note: "Unemployed",
     },
   ]);
+
   return (
     <div className="App">
       <div className="container">
         <h1 className="container-heading">React Typescript Crash Course</h1>
         <List people={people} />
-        <Add />
+        <Add people={people} setPeople={setPeople} />
       </div>
     </div>
   );

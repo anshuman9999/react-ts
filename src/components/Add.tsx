@@ -1,34 +1,39 @@
 import useForm from "../hooks/useForm";
+import { AppState } from "../App";
 
-interface FormValues {
-  name: string;
-  age: string;
-  url: string;
-  note?: string;
+interface AddProps {
+  people: AppState["people"];
+  setPeople: React.Dispatch<React.SetStateAction<AppState["people"]>>;
 }
 
-const Add = () => {
-  const [values, setValues] = useForm<FormValues>({
+const Add: React.FC<AddProps> = ({ people, setPeople }) => {
+  const [values, setValues] = useForm<AppState["people"][0]>({
     name: "",
-    age: "",
+    age: 21,
     url: "",
     note: "",
   });
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+
+    const { name, age, url, note } = values;
+    if (!name || !age || !url) return;
+
+    setPeople([
+      ...people,
+      {
+        name,
+        age,
+        url,
+        note,
+      },
+    ]);
+  };
+
   return (
     <div className="form-container">
-      <form
-        className="form-wrapper"
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log({
-            name: values.name,
-            age: values.age,
-            url: values.url,
-            note: values?.note,
-          });
-        }}
-      >
+      <form className="form-wrapper" onSubmit={handleSubmit}>
         <div className="form-item">
           <label htmlFor="name">Name</label>
           <input
