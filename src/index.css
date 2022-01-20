@@ -12,6 +12,11 @@ body,
   height: 100%;
 }
 
+input {
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .container {
   width: 100%;
   max-width: 900px;
@@ -58,4 +63,27 @@ body,
   overflow: hidden;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.form-container {
+  width: 40%;
+  padding: 16px;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-btn {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
