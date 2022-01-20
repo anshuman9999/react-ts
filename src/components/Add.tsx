@@ -1,7 +1,7 @@
 import useForm from "../hooks/useForm";
 import { AppState } from "../App";
 
-interface AddProps {
+export interface AddProps {
   people: AppState["people"];
   setPeople: (arg: AppState["people"]) => void;
 }

@@ -13,7 +13,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <h1 className="container-heading">React Typescript Crash Course</h1>
-        <List people={people} />
+        <List people={people} setPeople={setPeople} />
         <Add people={people} setPeople={setPeople} />
       </div>
     </div>
