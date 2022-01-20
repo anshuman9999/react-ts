@@ -13,6 +13,12 @@ const App = () => {
       url: "https://avatars.githubusercontent.com/u/52123364?v=4",
       note: "Unemployed",
     },
+    {
+      name: "Ashish Papanai",
+      age: 21,
+      url: "https://avatars.githubusercontent.com/u/52123364?v=4",
+      note: "Unemployed",
+    },
   ]);
   return (
     <div className="App">
