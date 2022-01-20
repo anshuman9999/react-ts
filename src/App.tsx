@@ -1,20 +1,13 @@
-import { useState } from "react";
 import Add from "./components/Add";
 import List from "./components/List";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 export interface AppState {
   people: { name: string; age: number; url: string; note?: string }[];
 }
 
 const App = () => {
-  const [people, setPeople] = useState<AppState["people"]>([
-    {
-      name: "Ashish Papanai",
-      age: 21,
-      url: "https://avatars.githubusercontent.com/u/52123364?v=4",
-      note: "Unemployed",
-    },
-  ]);
+  const [people, setPeople] = useLocalStorage<AppState["people"]>("people", []);
 
   return (
     <div className="App">

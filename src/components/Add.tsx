@@ -3,7 +3,7 @@ import { AppState } from "../App";
 
 interface AddProps {
   people: AppState["people"];
-  setPeople: React.Dispatch<React.SetStateAction<AppState["people"]>>;
+  setPeople: (arg: AppState["people"]) => void;
 }
 
 const Add: React.FC<AddProps> = ({ people, setPeople }) => {
